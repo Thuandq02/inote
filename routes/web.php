@@ -32,5 +32,4 @@ Route::prefix('/notetype')->group(function (){
     Route::post('/update/{id}',[NoteTypeController::class,'update'])->name('notetype.update');
     Route::get('/delete/{id}',[NoteTypeController::class,'destroy'])->name('notetype.destroy');
     Route::post('/search',[NoteTypeController::class,'search'])->name('notetype.search');
-
 });

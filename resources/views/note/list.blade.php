@@ -48,8 +48,8 @@
                             @endif
                             </tbody>
                         </table>
-{{--                        <p>{{ $notes->links() }}</p>--}}
                         <div>
+                            <div class="text-center">{{ $notes->links( "pagination::bootstrap-4") }}</div>
                             <a class="btn btn-primary" href="{{ route('note.create') }}">Thêm mới</a>
                             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
                             </button>

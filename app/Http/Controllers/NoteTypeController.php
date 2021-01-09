@@ -14,9 +14,8 @@ class NoteTypeController extends Controller
      */
     public function index()
     {
-        $notetypes = Note_type::paginate(5);
         $notetyps = Note_type::all();
-        return view('notetype.list',compact('notetypes','notetyps'));
+        return view('notetype.list',compact('notetyps'));
     }
 
     /**
