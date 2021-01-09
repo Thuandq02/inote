@@ -96,4 +96,10 @@ class NoteController extends Controller
         $note->delete();
         return redirect()->route('note.index');
     }
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $notes = Note::where('title', 'LIKE', "%$search%")->orWhere('content', 'LIKE', "%$search%")->get();
+        return view("note.list", compact('notes'));
+    }
 }

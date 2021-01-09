@@ -10,16 +10,10 @@
 
                     <table class="table">
                         <thead>
-                        <form class="navbar-form navbar-left">
+                        <form method="post" action="{{ route('notetype.search') }}" class="form-inline">
                             @csrf
-                            <div>
-                                <div>
-                                    <div>
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <button type="submit" class="btn btn-drak">Tìm kiếm</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         </thead>
                         <tbody>

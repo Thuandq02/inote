@@ -93,4 +93,10 @@ class NoteTypeController extends Controller
         $note_type->delete();
         return redirect()->route('notetype.index');
     }
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $notetyps = Note_type::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->get();
+        return view("notetype.list", compact('notetyps'));
+    }
 }

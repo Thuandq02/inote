@@ -10,16 +10,10 @@
 
                     <table class="table">
                         <thead>
-                        <form class="navbar-form navbar-left">
+                        <form method="post" action="{{ route('note.search') }}" class="form-inline">
                             @csrf
-                            <div>
-                                <div>
-                                    <div>
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <button type="submit" class="btn btn-drak">Tìm kiếm</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         </thead>
                         <tbody>
@@ -54,7 +48,7 @@
                             @endif
                             </tbody>
                         </table>
-                        <p>{{ $notes->links() }}</p>
+{{--                        <p>{{ $notes->links() }}</p>--}}
                         <div>
                             <a class="btn btn-primary" href="{{ route('note.create') }}">Thêm mới</a>
                             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy

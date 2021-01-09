@@ -22,7 +22,7 @@ Route::prefix('/')->group(function (){
     Route::get('/edit/{id}',[NoteController::class,'edit'])->name('note.edit');
     Route::post('/update/{id}',[NoteController::class,'update'])->name('note.update');
     Route::get('/delete/{id}',[NoteController::class,'destroy'])->name('note.destroy');
-
+    Route::post('/search', [NoteController::class, 'search'])->name('note.search');
 });
 Route::prefix('/notetype')->group(function (){
     Route::get('/',[NoteTypeController::class,'index'])->name('notetype.index');
@@ -31,5 +31,6 @@ Route::prefix('/notetype')->group(function (){
     Route::get('/edit/{id}',[NoteTypeController::class,'edit'])->name('notetype.edit');
     Route::post('/update/{id}',[NoteTypeController::class,'update'])->name('notetype.update');
     Route::get('/delete/{id}',[NoteTypeController::class,'destroy'])->name('notetype.destroy');
+    Route::post('/search',[NoteTypeController::class,'search'])->name('notetype.search');
 
 });
