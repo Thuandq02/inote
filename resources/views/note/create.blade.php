@@ -9,11 +9,11 @@
                     @csrf
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Title" required>
+                        <input type="text" class="form-control" name="title" required>
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
-                        <input type="text" class="form-control" name="content" placeholder="Content" required>
+                        <label>Content</label><br>
+                        <textarea name="content" id="" cols="30" rows="5" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Note Type</label>

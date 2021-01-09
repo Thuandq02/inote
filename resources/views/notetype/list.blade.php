@@ -22,7 +22,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Description</th>
+                                <th scope="col">Note Type</th>
                                 <th scope="col" colspan="2">Action</th>
                             </tr>
                             </thead>
@@ -36,7 +36,9 @@
                                     <tr>
                                         <th scope="row">{{ ++$key }}</th>
                                         <th>{{ $notetyp->name }}</th>
-                                        <th>{{ $notetyp->description }}</th>
+                                        <th>
+                                            <textarea cols="30" rows="5">{{ $notetyp->description }}</textarea>
+                                        </th>
                                         <th>
                                             <a href="{{ route('notetype.edit', $notetyp->id) }}">sửa</a> |
                                             <a href="{{ route('notetype.destroy', $notetyp->id) }}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>

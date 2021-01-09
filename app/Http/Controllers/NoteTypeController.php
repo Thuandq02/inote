@@ -95,7 +95,7 @@ class NoteTypeController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $notetyps = Note_type::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->get();
+        $notetyps = Note_type::where('name', 'LIKE', "%$search%")->get();
         return view("notetype.list", compact('notetyps'));
     }
 }

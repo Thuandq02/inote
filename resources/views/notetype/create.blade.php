@@ -9,11 +9,11 @@
                     @csrf
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" class="form-control" name="description" placeholder="Description" required>
+                        <textarea name="description" cols="30" rows="5" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
                     <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>

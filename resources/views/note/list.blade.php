@@ -37,7 +37,9 @@
                                     <tr>
                                         <th scope="row">{{ ++$key }}</th>
                                         <td>{{ $note->title }}</td>
-                                        <td>{{ $note->content }}</td>
+                                        <td>
+                                            <textarea cols="30" rows="10">{{ $note->content }}</textarea>
+                                        </td>
                                         <td>{{ $note->note_type->name }}</td>
                                         <td>
                                             <a href="{{ route('note.edit', $note->id) }}">sửa</a> |
@@ -49,7 +51,6 @@
                             </tbody>
                         </table>
                         <div>
-                            <div class="text-center">{{ $notes->links( "pagination::bootstrap-4") }}</div>
                             <a class="btn btn-primary" href="{{ route('note.create') }}">Thêm mới</a>
                             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
                             </button>
@@ -60,4 +61,5 @@
             </div>
         </div>
     </div>
+
 @endsection

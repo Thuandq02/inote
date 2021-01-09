@@ -9,11 +9,11 @@
                     @csrf
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Title" required value="{{ $note->title }}">
+                        <input type="text" class="form-control" name="title" required value="{{ $note->title }}">
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
-                        <input type="text" class="form-control" name="content" placeholder="Content" required value="{{ $note->content }}">
+                        <label>Content</label><br>
+                        <textarea name="content" cols="30" rows="5" class="form-control" required>{{ $note->content }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Note Type</label>
