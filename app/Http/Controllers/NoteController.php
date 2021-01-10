@@ -99,7 +99,7 @@ class NoteController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $notes = Note::where('title', 'LIKE', "%$search%")->orWhere('content', 'LIKE', "%$search%")->get();
+        $notes = Note::where('title', 'LIKE', "%$search%")->orWhere('content', 'LIKE', "%$search%")->paginate(10);
         return view("note.list", compact('notes'));
     }
 }

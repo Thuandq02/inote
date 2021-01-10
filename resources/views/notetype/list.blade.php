@@ -7,12 +7,12 @@
             <div class="tables">
                 <h2 class="title1">Danh Sách Note Type</h2>
                 <div class="panel-body widget-shadow">
-
                     <table class="table">
                         <thead>
                         <form method="post" action="{{ route('notetype.search') }}" class="form-inline">
                             @csrf
-                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search"
+                                   aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                         </thead>
@@ -34,14 +34,15 @@
                             @else
                                 @foreach($notetyps as $key => $notetyp)
                                     <tr>
-                                        <th scope="row">{{ ++$key }}</th>
+                                        <th scope="row">{{ $key + $notetyps->firstItem() }}</th>
                                         <th>{{ $notetyp->name }}</th>
                                         <th>
                                             <textarea cols="30" rows="5">{{ $notetyp->description }}</textarea>
                                         </th>
                                         <th>
                                             <a href="{{ route('notetype.edit', $notetyp->id) }}">sửa</a> |
-                                            <a href="{{ route('notetype.destroy', $notetyp->id) }}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
+                                            <a href="{{ route('notetype.destroy', $notetyp->id) }}" class="text-danger"
+                                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
                                         </th>
                                     </tr>
                                 @endforeach
@@ -49,6 +50,7 @@
                             </tbody>
                         </table>
                         <div>
+                            <div style="float: right;">{{ $notetyps->links( "pagination::bootstrap-4") }}</div>
                             <a class="btn btn-primary" href="{{ route('notetype.create') }}">Thêm mới</a>
                             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
                             </button>
@@ -59,4 +61,8 @@
             </div>
         </div>
     </div>
+
+
 @endsection
+
+

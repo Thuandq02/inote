@@ -14,7 +14,7 @@ class NoteTypeController extends Controller
      */
     public function index()
     {
-        $notetyps = Note_type::all();
+        $notetyps = Note_type::paginate(2);
         return view('notetype.list',compact('notetyps'));
     }
 
@@ -95,7 +95,7 @@ class NoteTypeController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $notetyps = Note_type::where('name', 'LIKE', "%$search%")->get();
+        $notetyps = Note_type::where('name', 'LIKE', "%$search%")->paginate(10);
         return view("notetype.list", compact('notetyps'));
     }
 }
