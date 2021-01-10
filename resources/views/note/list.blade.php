@@ -35,10 +35,10 @@
                             @else
                                 @foreach($notes as $key => $note)
                                     <tr>
-                                        <th scope="row">{{ ++$key }}</th>
+                                        <th scope="row">{{$key + $notes->firstItem() }}</th>
                                         <td>{{ $note->title }}</td>
                                         <td>
-                                            <textarea cols="30" rows="10">{{ $note->content }}</textarea>
+                                            <textarea cols="40" rows="10">{{ $note->content }}</textarea>
                                         </td>
                                         <td>{{ $note->note_type->name }}</td>
                                         <td>
@@ -51,6 +51,7 @@
                             </tbody>
                         </table>
                         <div>
+                            <div style="float: right;">{{ $notes->links( "pagination::bootstrap-4") }}</div>
                             <a class="btn btn-primary" href="{{ route('note.create') }}">Thêm mới</a>
                             <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy
                             </button>
